@@ -1,0 +1,133 @@
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <style>
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 35px;
+}
+h3{
+  font-size: 24px;
+}
+h4{
+  font-size: 19px;
+}
+h5{
+  font-size: 15px;
+}
+p {
+  font-size: 19px;
+}
+</style>
+
+     <meta charset="utf-8">
+     <meta name = "viewport" content = "width = device-width, intial-scale = 1">
+     <title>RSA ALGORITHM</title>
+      <link rel="stylesheet" href="style.css">
+
+   </head>
+
+   <script src="logic.js"></script>
+   <body>
+     <div class="container">
+
+     <p style="text-align:left"> In this project, I created a simple webpage using HTML, CSS & JSS which will introduce you to most widely used
+       encryption mechanism called as<b> RSA Algorithm</b>. It also has a live demonstration where a user can input a secret message, get their private and
+       public keys, once they get their keys they can see how the encrypted version of their secret message would look like. They can also decrypt the encrypted message
+       to see the secret message.
+     </p>
+
+     <h1>What is RSA algorithm ?</h1>
+
+              <p style="text-align:left"> The name RSA algorithm came from its founder <b>RIVEST SHAMIR ADLEMAN</b>. The algorithm was introduced in the year 1978.
+              RSA algorithm is an assymertic encryption where assymertic means that two opposite keys are operating and they are private key
+              and public key. RSA was also best known and widely used public key for Encryption and Decryption of the data.</p>
+
+
+              <p style="text-align:left-right">Encryption is the one converting plaintext into cipher text where as Decryption converts cipher text into plain text by the secret key that was sent by the sender to receiver.<br>
+ It is an asymmetric (public key) cryptosystem based on number theory, which is a block cipher system.
+</p>
+<h2><b>Working of RSA algorithm</b></h2>
+<p>It's algorithm can be used for both public key encryption and digital signatures. Its security is based on the difficulty of solving certain mathematical problems such as factoring large integers.</p>
+      <p>The working of an RSA algorithm contains three steps:</p>
+      <ol>
+        <li><p>Generation of keys </p></li>
+        <li><p>Encryption</p></li>
+        <li><p>Decryption</p></li>
+        </ol>
+  <br>
+  <ul>
+
+<li><h2><b>Generation of keys : </b></h2></li>
+
+<ul>
+      <li><p>Step 1:  Take two prime numbers x and y.</p></li>
+      <li><p>Step 2:  Multiply the two prime numbers and store the result in the variable
+                    called n i.e. n = x*y.
+</p></li>
+         <li><p>Step 3:  Calculate the totient function.
+                       ϕ (n) = (x−1) (y−1).
+<ul>
+                  <li><p>Note: Euler's totient function (also called the Phi function) counts the number of positive integers less than n that are co-prime to n. </p></li>
+</ul>
+</p></li>
+        <li><p>Step 4 :  Select an integer e such it is co-prime to that totient function and also  e < ϕ(n) This pair of keys also called as public key i.e. (n, e)
+</p></li>
+        <li><p>Step 5: Calculate d such that e.d = 1 mod phi (n).
+	                	This pair of keys also called as public key i.e. (n, d).
+                    <ul>
+                    <li><p>Note: To calculate d value, wolfram alpha compute engine is used. To get d, please use e^(-1) mod phi(n). </p></li>
+                  </ul>
+</p></li>
+  </ul>
+        <li><h2><b>Encryption : </b></h2>
+          <p>Encryption is used for converting plain text into cipher text . Encryption contains the public key .</p>
+    <ul>
+      <li><p><b>C=P^e mod n</b></p></li>
+    </ul>
+</ul>
+<ul>
+  <li><h2><b>Decryption : </b></h2></li>
+  <p>Decryption is used for converting plain text into cipher text . Decryption contains the private key .</p>
+  <ul>
+    <li><p><b>P=C^d mod n.</b></p></li>
+  </ul>
+</ul>
+<h2><b>Advantages of RSA Algorithm :</b></h2>
+<ol>
+  <li><p>RSA is stronger than any other symmetric key algorithm.</p></li>
+  <li><p>RSA has overcome the weakness of symmetric algorithm
+            i.e. Authenticity and confidentiality.
+</p></li>
+<li><p>RSA algorithm is safe and secure for its users through the use of
+ Complex mathematics.
+</p></li>
+<li><p>RSA algorithm is hard to crack since it involves factorization of prime
+numbers which are difficult to factorize.
+</p></li>
+<li><p>RSA algorithm uses the public key to encrypt data and the key is
+            known to everyone, therefore, it is easy to share the public key.
+</p></li>
+
+</ol>
+<h2><b>Disadvantages of RSA algorithm : </b></h2>
+<ol>
+  <li><p>RSA algorithm can be very slow in cases where large data needs to be encrypted by the same computer</p></li>
+  <li><p>It requires a third party to verify the reliability of public keys.</p></li>
+</ol>
+
+
+<h2><b>Live Demo :</b></h2>
+<form>
+  <label for="fname">Enter the Secret Message : </label>
+  <input id="secretMess" type = "text" placeholder="Secret Message"/>
+</form>
+<button  class="button" onclick="key()" >Enter</button>
+</div>
+
+
+   </body>
+
+ </html>
